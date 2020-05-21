@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iframe viewer</title>
+</head>
+<body>
+  <iframe name="iframe" width="500" height="300" id="iframe">
+    この部分はインラインフレームを使用しています。
+  </iframe>
+  <script>
+    const iframe = document.querySelector("#iframe");
+    iframe.setAttribute("width", "1000");
+    iframe.setAttribute("height", "500");
+    if (location.search.indexOf("?") >= 0) {
+      const queryParams = location.search.replace("?", "").split("&").forEach(str => {
+        const keyValue = str.split("=");
+        const key = keyValue[0];
+        const value = keyValue[1];
+        iframe.setAttribute(key, value);
+      });
+    }
+  </script>
+</body>
+</html>
