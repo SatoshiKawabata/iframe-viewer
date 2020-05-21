@@ -6,9 +6,10 @@
   <title>iframe viewer</title>
 </head>
 <body>
-  <iframe name="iframe" width="500" height="300" id="iframe">
-    この部分はインラインフレームを使用しています。
-  </iframe>
+  <p>from query param</p>
+  <iframe name="iframe" width="500" height="300" id="iframe"></iframe>
+  <p>file:///</p>
+  <iframe src="file:///" name="iframe" width="500" height="300"></iframe>
   <script>
     const iframe = document.querySelector("#iframe");
     iframe.setAttribute("width", "1000");
